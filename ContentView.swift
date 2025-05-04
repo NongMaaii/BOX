@@ -65,3 +65,35 @@ struct CardView: View {
 
     var body: some View {
         Text("
+
+    var sortedHand: [Card] {
+    player.hand.sorted {
+        if $0.rank.rawValue == $1.rank.rawValue {
+            return $0.suit.sortIndex < $1.suit.sortIndex
+        } else {
+            return $0.rank.rawValue < $1.rank.rawValue
+        }
+    }
+}
+
+             
+import SwiftUI
+
+struct CardView: View {
+    let card: Card
+
+    var body: some View {
+        Text("
+             
+enum Suit: String, CaseIterable {
+    case clubs = "♣", diamonds = "♦", hearts = "♥", spades = "♠"
+
+    var sortIndex: Int {
+        switch self {
+        case .clubs: return 0
+        case .diamonds: return 1
+        case .hearts: return 2
+        case .spades: return 3
+        }
+    }
+}
