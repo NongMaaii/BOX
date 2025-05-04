@@ -55,3 +55,13 @@ struct ContentView: View {
 
                 if let score = HandEvaluator.straightRank(testHand) {
                     print("Straight! Rank score:
+
+
+import SwiftUI
+
+// ตัวแสดงไพ่
+struct CardView: View {
+    var card: Card
+
+    var body: some View {
+        Text("
