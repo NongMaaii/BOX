@@ -29,3 +29,8 @@ struct Player {
     var id: Int
     var hand: [Card] = []
 }
+            
+struct Player: Identifiable {
+    let id = UUID()
+    var hand: [Card]
+}
