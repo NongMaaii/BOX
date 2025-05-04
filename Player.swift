@@ -24,3 +24,8 @@ enum Rank: Int, CaseIterable {
         case .queen: return "Q"
         case .king: return "K"
         default: return "
+
+struct Player {
+    var id: Int
+    var hand: [Card] = []
+}
