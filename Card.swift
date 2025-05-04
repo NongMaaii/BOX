@@ -73,3 +73,28 @@ struct Card: Equatable {
     let suit: Suit
     let rank: Rank
 }
+import Foundation
+
+enum Suit: String, CaseIterable {
+    case hearts, diamonds, clubs, spades
+}
+
+enum Rank: Int, CaseIterable {
+    case two = 2, three, four, five, six, seven, eight, nine, ten
+    case jack, queen, king, ace
+}
+
+struct Card: Equatable {
+    let suit: Suit
+    let rank: Rank
+
+    static var allCards: [Card] {
+        var deck: [Card] = []
+        for suit in Suit.allCases {
+            for rank in Rank.allCases {
+                deck.append(Card(suit: suit, rank: rank))
+            }
+        }
+        return deck
+    }
+}
