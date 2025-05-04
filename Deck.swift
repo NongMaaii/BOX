@@ -116,3 +116,19 @@ struct Deck {
         return cards.isEmpty ? nil : cards.removeFirst()
     }
 }
+
+struct Deck {
+    private(set) var cards: [Card] = Card.allCards
+
+    init() {
+        shuffle()
+    }
+
+    mutating func shuffle() {
+        cards.shuffle()
+    }
+
+    mutating func drawCard() -> Card? {
+        return cards.isEmpty ? nil : cards.removeFirst()
+    }
+}
