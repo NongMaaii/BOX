@@ -94,8 +94,22 @@ func playGame() {
     }
     
 }
-      
+    
+func dealCardsToPlayers() -> [Player] {
+    var players = (1...4).map { Player(id: $0) }
+    var deck = Deck()
 
+    for _ in 0..<13 { // แจกคนละ 13 ใบ
+        for i in 0..<players.count {
+            if let card = deck.drawCard() {
+                players[i].hand.append(card)
+            }
+        }
+    }
+
+    return players
+}      
+}
 
 
     
