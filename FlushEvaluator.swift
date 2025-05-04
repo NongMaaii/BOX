@@ -47,3 +47,14 @@ let flush2 = [
 // เปรียบเทียบ
 let result = compareFlush(flush1, flush2)
 print(result)  // จะพิมพ์ "Flush 1 ชนะ"
+
+struct FlushEvaluator {
+    static func isFlush(_ hand: [Card]) -> Bool {
+        guard let suit = hand.first?.suit else { return false }
+        return hand.allSatisfy { $0.suit == suit }
+    }
+
+    static func score(for hand: [Card]) -> Int {
+        return hand.map { $0.rank.rawValue }.max() ?? 0
+    }
+}
