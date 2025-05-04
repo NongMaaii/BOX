@@ -57,9 +57,8 @@ struct ContentView: View {
                     print("Straight! Rank score:
 
 
-import SwiftUI
-
-// ตัวแสดงไพ่
+import SwiftUI // ตัวแสดงไพ่
+                          
 struct CardView: View {
     var card: Card
 
@@ -93,3 +92,48 @@ struct CardView: View {
             }
     }
 }
+                
+struct PlayerHandView: View {
+    var hand: [Card]
+
+    var sortedHand: [Card] {
+        hand.sorted {
+            if $0.suit.rawValue == $1.suit.rawValue {
+                return $0.rank.rawValue < $1.rank.rawValue
+            } else {
+                return $0.suit.rawValue < $1.suit.rawValue
+            }
+        }
+    }
+
+    var body: some View {
+        ScrollView(.horizontal) {
+            HStack {
+                ForEach(sortedHand, id: \.self) { card in
+                    Text("
+
+class GameViewModel: ObservableObject {
+    @Published var players: [Player] = []
+
+    init() {
+        dealCardsToPlayers()
+    }
+
+    func dealCardsToPlayers() {
+        var deck = Deck()
+        deck.shuffle()
+
+        var newPlayers: [Player] = []
+        for _ in 0..<4 {
+            var hand: [Card] = []
+            for _ in 0..<13 {
+                if let card = deck.drawCard() {
+                    hand.append(card)
+                }
+            }
+            newPlayers.append(Player(hand: hand))
+        }
+
+        self.players = newPlayers
+    }
+                         }
