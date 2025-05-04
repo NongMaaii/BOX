@@ -74,8 +74,10 @@ struct CardView: View {
             return $0.rank.rawValue < $1.rank.rawValue
         }
     }
-}""
-
+}
+            )
+    }
+}
              
 import SwiftUI
 
@@ -96,4 +98,12 @@ enum Suit: String, CaseIterable {
         case .spades: return 3
         }
     }
-}"
+}
+            )
+    }
+}
+                         )
+                }
+            }
+    }
+}
