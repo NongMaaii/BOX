@@ -37,3 +37,33 @@ struct HandEvaluator {
         return nil
     }
 }
+
+if let score = HandEvaluator.straightRank(hand) {
+    print("Straight! Rank score:
+
+import Foundation
+
+struct HandEvaluator {
+    static let straightRanks: [[String]] = [
+        ["2", "3", "4", "5", "6"],
+        ["3", "4", "5", "6", "7"],
+        ["4", "5", "6", "7", "8"],
+        ["5", "6", "7", "8", "9"],
+        ["6", "7", "8", "9", "10"],
+        ["7", "8", "9", "10", "J"],
+        ["8", "9", "10", "J", "Q"],
+        ["9", "10", "J", "Q", "K"],
+        ["10", "J", "Q", "K", "A"], // ใหญ่สุด
+        ["A", "2", "3", "4", "5"]   // รองใหญ่สุด
+    ]
+
+    static func straightRank(_ hand: [Card]) -> Int? {
+        let ranks = hand.map { $0.rank }
+        for (index, pattern) in straightRanks.enumerated() {
+            if Set(pattern) == Set(ranks) {
+                return index + 1
+            }
+        }
+        return nil
+    }
+}
