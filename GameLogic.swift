@@ -25,8 +25,9 @@ func evaluateThreePiles(head: [Card], middle: [Card], tail: [Card]) {
     let middleScore = FlushEvaluator.score(for: middle)
     let tailHighCard = Hand(cards: tail).highestCard()
 
-    print("หัว:
-
+    print("หัว:...
+         )
+}
           func dealCards(to players: inout [Player], deck: inout Deck) {
     for i in 0..<players.count {
         var hand: [Card] = []
@@ -63,9 +64,9 @@ func evaluateThreePiles(head: [Card], middle: [Card], tail: [Card]) {
             winner = player
         }
     }
-    
     return winner
           }
+          
           func playGame() {
     var players = [Player(), Player(), Player()]  // จำนวนผู้เล่นสามารถปรับได้
     var deck = Deck()
@@ -78,3 +79,6 @@ func evaluateThreePiles(head: [Card], middle: [Card], tail: [Card]) {
     
     if let winner = compareScores(players: players) {
         print("ผู้ชนะคือ:
+             )
+    }
+          }
