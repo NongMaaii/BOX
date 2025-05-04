@@ -18,3 +18,11 @@ func evaluateHead(_ cards: [Card]) -> Int {
 
     return 1 // หัวแตก (ไม่มีคู่ ไม่มีตอง)
 }
+let head = [
+    Card(rank: .ace, suit: "hearts"),
+    Card(rank: .ace, suit: "clubs"),
+    Card(rank: .king, suit: "diamonds")
+]
+
+let score = evaluateHead(head)
+print("หัวได้
