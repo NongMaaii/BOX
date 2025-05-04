@@ -55,3 +55,21 @@ class Card {
     let suit: String
     let rank: String
         }
+        
+enum Suit: String, CaseIterable {
+    case spades, hearts, diamonds, clubs
+}
+
+enum Rank: Int, CaseIterable, Comparable {
+    case two = 2, three, four, five, six, seven, eight, nine, ten
+    case jack, queen, king, ace
+
+    static func < (lhs: Rank, rhs: Rank) -> Bool {
+        return lhs.rawValue < rhs.rawValue
+    }
+}
+
+struct Card: Equatable {
+    let suit: Suit
+    let rank: Rank
+}
