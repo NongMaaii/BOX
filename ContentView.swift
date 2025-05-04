@@ -13,3 +13,11 @@ struct ContentView: View {
 
             if let card = drawnCard {
                 Text("You drew:
+
+struct ContentView: View {
+    @StateObject var deck = DeckViewModel()
+
+    var body: some View {
+        VStack {
+            ForEach(deck.cards) { card in
+                Text("              
