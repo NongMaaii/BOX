@@ -21,3 +21,20 @@ struct ContentView: View {
         VStack {
             ForEach(deck.cards) { card in
                 Text("              
+let flush1 = [
+    Card(rank: .ace, suit: "spades"),
+    Card(rank: .king, suit: "spades"),
+    Card(rank: .queen, suit: "spades"),
+    Card(rank: .jack, suit: "spades"),
+    Card(rank: .ten, suit: "spades")
+]
+
+let flush2 = [
+    Card(rank: .king, suit: "hearts"),
+    Card(rank: .queen, suit: "hearts"),
+    Card(rank: .jack, suit: "hearts"),
+    Card(rank: .ten, suit: "hearts"),
+    Card(rank: .nine, suit: "hearts")
+]
+
+print(compareFlush(flush1, flush2))
