@@ -1,8 +1,9 @@
-import Foundation
+
 class GameLogic {
     var deck = Deck()
     var playerHand: [Card] = []
 
+    import Foundation
     func dealInitialCards() {
         for _ in 0..<13 {
             if let card = deck.dealCard() {
