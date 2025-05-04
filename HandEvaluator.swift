@@ -67,3 +67,11 @@ struct HandEvaluator {
         return nil
     }
 }
+
+          struct Hand {
+    var cards: [Card]
+
+    func highestCard() -> Card? {
+        return cards.sorted { $0.rank.rawValue > $1.rank.rawValue }.first
+    }
+          }
