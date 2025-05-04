@@ -23,3 +23,12 @@ class GameViewModel: ObservableObject {
         self.players = newPlayers
     }
 }
+
+struct MainView: View {
+    @StateObject var viewModel = GameViewModel()
+
+    var body: some View {
+        VStack {
+            ForEach(viewModel.players) { player in
+                VStack(alignment: .leading) {
+                    Text("Player
