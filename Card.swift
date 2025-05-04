@@ -9,9 +9,10 @@ enum Suit: String, CaseIterable {
     case spades = "♠"
 }
 
+// ค่าของไพ่
 enum Rank: Int, CaseIterable {
-    case two = 2, three = 3, four = 4, five = 5, six = 6, seven = 7, eight = 8, nine = 9, ten = 10
-    case jack = 11, queen = 12, king = 13, ace = 1
+    case two = 2, three, four, five, six, seven, eight, nine, ten
+    case jack = 11, queen = 12, king = 13, ace = 14  // ให้ A ใหญ่สุด
 
     var display: String {
         switch self {
@@ -19,21 +20,9 @@ enum Rank: Int, CaseIterable {
         case .jack: return "J"
         case .queen: return "Q"
         case .king: return "K"
-        default: return " "
-
-import Foundation
-
-// สร้างประเภทของไพ่
-enum Suit: String {
-    case hearts = "♥"
-    case diamonds = "♦"
-    case clubs = "♣"
-    case spades = "♠"
-}
-
-// ค่าของไพ่
-enum Rank: String {
-    case two = "2", three = "3", four = "4", five = "5", six = "6", seven = "7", eight = "8", nine = "9", ten = "10", jack = "J", queen = "Q", king = "K", ace = "A"
+        default: return String(self.rawValue)
+        }
+    }
 }
 
 // คลาสสำหรับไพ่
@@ -48,7 +37,7 @@ class Card {
     
     // ฟังก์ชั่นแสดงข้อมูลไพ่
     func description() -> String {
-        return " "
+        return "
 
         struct Card: Identifiable {
     let id = UUID()
