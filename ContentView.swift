@@ -38,3 +38,20 @@ let flush2 = [
 ]
 
 print(compareFlush(flush1, flush2))
+
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        Text("Testing Straight")
+            .onAppear {
+                let testHand = [
+                    Card(suit: .hearts, rank: "A"),
+                    Card(suit: .spades, rank: "2"),
+                    Card(suit: .clubs, rank: "3"),
+                    Card(suit: .diamonds, rank: "4"),
+                    Card(suit: .hearts, rank: "5")
+                ]
+
+                if let score = HandEvaluator.straightRank(testHand) {
+                    print("Straight! Rank score:
