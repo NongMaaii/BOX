@@ -63,3 +63,26 @@ class Deck {
         return cards.isEmpty ? nil : cards.removeFirst()
     }
 }
+
+class Deck {
+    var cards: [Card] = []
+
+    init() {
+        let suits = ["♠", "♥", "♦", "♣"]
+        let ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+        for suit in suits {
+            for rank in ranks {
+                cards.append(Card(suit: suit, rank: rank))
+            }
+        }
+        shuffle()
+    }
+
+    func shuffle() {
+        cards.shuffle()
+    }
+
+    func drawCard() -> Card? {
+        return cards.popLast()
+    }
+}
