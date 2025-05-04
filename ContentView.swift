@@ -72,22 +72,8 @@ struct CardView: View {
             return $0.suit.sortIndex < $1.suit.sortIndex
         } else {
             return $0.rank.rawValue < $1.rank.rawValue
-        }
-    }
-}"
-         )
-    }
-}
-             
-import SwiftUI
 
-struct CardView: View {
-    let card: Card
-
-    var body: some View {
-        Text("
-             
-enum Suit: String, CaseIterable {
+    enum Suit: String, CaseIterable {
     case clubs = "♣", diamonds = "♦", hearts = "♥", spades = "♠"
 
     var sortIndex: Int {
@@ -98,11 +84,11 @@ enum Suit: String, CaseIterable {
         case .spades: return 3
         }
     }
-}"
-            )
+}
+            
     }
 }
-                         )
+                    
                 }
             }
     }
