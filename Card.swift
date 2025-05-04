@@ -10,8 +10,8 @@ enum Suit: String, CaseIterable {
 }
 
 enum Rank: Int, CaseIterable {
-    case two = 2, three, four, five, six, seven, eight, nine, ten
-    case jack = 11, queen, king, ace = 1
+    case two = 2, three = 3, four = 4, five = 5, six = 6, seven = 7, eight = 8, nine = 9, ten = 10
+    case jack = 11, queen = 12, king = 13, ace = 1
 
     var display: String {
         switch self {
@@ -19,7 +19,7 @@ enum Rank: Int, CaseIterable {
         case .jack: return "J"
         case .queen: return "Q"
         case .king: return "K"
-        default: return "
+        default: return " "
 
 import Foundation
 
