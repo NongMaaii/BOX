@@ -16,6 +16,24 @@ func evaluateHead(_ cards: [Card]) -> Int {
         }
     }
 
+    struct HeadEvaluator {
+    static func score(for hand: [Card]) -> Int {
+        let ranks = hand.map { $0.rank }
+        let uniqueRanks = Set(ranks)
+
+        if uniqueRanks.count == 1 {
+            return 3 // ตอง
+        } else if uniqueRanks.count == 2 {
+            if ranks.contains(.ace) {
+                return 2 // คู่ A
+            }
+            return 1 // คู่ทั่วไป
+        } else {
+            return 1 // หัวแตก
+        }
+    }
+    }
+
     return 1 // หัวแตก (ไม่มีคู่ ไม่มีตอง)
 }
 let head = [
