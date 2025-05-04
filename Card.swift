@@ -49,3 +49,9 @@ class Card {
     // ฟังก์ชั่นแสดงข้อมูลไพ่
     func description() -> String {
         return "
+
+        struct Card: Identifiable {
+    let id = UUID()
+    let suit: String
+    let rank: String
+        }
