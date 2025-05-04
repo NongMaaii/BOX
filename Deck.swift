@@ -103,3 +103,16 @@ struct Deck {
         return cards.popLast()
     }
 }
+import Foundation
+
+struct Deck {
+    private var cards: [Card] = []
+
+    init() {
+        cards = Card.allCards.shuffled()
+    }
+
+    mutating func drawCard() -> Card? {
+        return cards.isEmpty ? nil : cards.removeFirst()
+    }
+}
