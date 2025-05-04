@@ -1,3 +1,4 @@
+import Foundation
 class GameLogic {
     var deck = Deck()
     var playerHand: [Card] = []
@@ -16,7 +17,7 @@ class GameLogic {
         return ([], [], [])
     }
 }
-import Foundation
+
 func evaluateThreePiles(head: [Card], middle: [Card], tail: [Card]) {
     let headScore = HeadEvaluator.score(for: head)
     let isMiddleFlush = FlushEvaluator.isFlush(middle)
